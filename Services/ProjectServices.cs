@@ -18,7 +18,7 @@ namespace ProjectAPI.Services
 
 
         //GetAllProjects get all the data in the database table
-        public List<Project> GetAllProject() => _context.Projects.ToList();
+        public List<Project> GetAllProject() => _context.Projects.OrderBy(n => n.ProjectId).ToList();
 
         //GetProjectById get the data of the particular id inside the table
         public Project GetProjectById(int projectId) =>
